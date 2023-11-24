@@ -1,0 +1,16 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+    <%- include('layout') %>
+  <h1><%= post.title %></h1>
+  <p><%= post.copy %></p>
+  <% if (user) { %>
+    <p>By <%= post.author.username %></p>
+<% } else { %>
+    <p>AUTHOR REDACTED. LOG IN TO VIEW.</p>
+<% } %>
+</body>
+</html>

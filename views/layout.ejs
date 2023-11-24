@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="/">Home Page</a></li>
+        <li><a href="/sign-up">Sign up Page</a></li>
+        <li><a href="/log-in">Log in Page</a></li>
+        <li><a href="/new-post">New Post</a></li>
+    </ul>
+
+    <ul class="user-cred">
+        <% if (user) { %>
+            <p>WELCOME BACK <%= user.username %></p>
+            <a href="/log-out">Log out</a>
+        <% } else { %>
+            <p>WELCOME GUEST</p>
+            <a href="/log-in">Log in</a>
+        <% } %>
+    </ul>
+  </body>
+</html>

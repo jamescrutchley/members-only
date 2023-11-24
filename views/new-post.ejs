@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+    <%- include('layout') %>
+  
+    <% if (user) { %>
+      <h1>New Post</h1>
+      <form action="" method="POST" class="new-post-form">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title">
+        <label for="copy">Post Content:</label>
+        <textarea maxlength="200" cols="50" rows="5" name="copy" id="copy"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+          <ul class="errors">
+            <% errors.forEach(error => { %>
+              <li><%= error.msg %></li>
+            <% }); %>
+          </ul>
+      <% } %>
+    <% } else { %>
+      <p>Please <a href="/log-in">log in</a> to create a new post.</p>
+    <% } %>
+  
+</body>
+</html>
